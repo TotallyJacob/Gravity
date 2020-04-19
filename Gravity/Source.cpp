@@ -1,6 +1,12 @@
+#define GLEW_STATIC
+
 #include<iostream>
+#include"Gravity.h"
 
 int main() {
+	Gravity gravity;
 
-	return 0;
+	gravity.start();
+
+	return gravity.end();
 }
