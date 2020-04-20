@@ -37,6 +37,12 @@
     <Filter Include="Source Files\engine\util">
       <UniqueIdentifier>{3448d4d2-a278-4231-b435-af547eec572f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\game\systems">
+      <UniqueIdentifier>{58d6548d-9193-423a-a81c-373957580636}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game\system">
+      <UniqueIdentifier>{c27f3650-9364-4692-b32b-835032f064df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp">
@@ -65,6 +71,21 @@
     </ClCompile>
     <ClCompile Include="Body.cpp">
       <Filter>Source Files\game\bodies</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>Source Files\game\bodies</Filter>
+    </ClCompile>
+    <ClCompile Include="Planet.cpp">
+      <Filter>Source Files\game\bodies</Filter>
+    </ClCompile>
+    <ClCompile Include="Moon.cpp">
+      <Filter>Source Files\game\bodies</Filter>
+    </ClCompile>
+    <ClCompile Include="SolarSystem.cpp">
+      <Filter>Source Files\game\system</Filter>
+    </ClCompile>
+    <ClCompile Include="PlanetSystem.cpp">
+      <Filter>Source Files\game\system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +118,21 @@
     </ClInclude>
     <ClInclude Include="Body.h">
       <Filter>Header Files\game\bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>Header Files\game\bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="Planet.h">
+      <Filter>Header Files\game\bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="Moon.h">
+      <Filter>Header Files\game\bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="SolarSystem.h">
+      <Filter>Header Files\game\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="PlanetSystem.h">
+      <Filter>Header Files\game\systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

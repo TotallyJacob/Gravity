@@ -51,5 +51,18 @@ public:
 
 	operator unsigned int() const { return program; }
 
+	//Other methods
+	static inline void sendModelMatrix(unsigned int shader, const GLfloat* matrix) {
+		glUniformMatrix4fv(glGetUniformLocation(shader, "modelMatrix"), 1, GL_FALSE, matrix);
+	}
+
+	static inline void sendPerspectiveMatrix(unsigned int shader, const GLfloat* matrix) {
+		glUniformMatrix4fv(glGetUniformLocation(shader, "perspectiveMatrix"), 1, GL_FALSE, matrix);
+	}
+
+	static inline void sendViewMatrix(unsigned int shader, const GLfloat* matrix) {
+		glUniformMatrix4fv(glGetUniformLocation(shader, "viewMatrix"), 1, GL_FALSE, matrix);
+	}
+
 };
 

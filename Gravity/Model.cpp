@@ -23,25 +23,22 @@ void Model::addIndex(split_string string) {
 	unsigned int vertIndex = 0, uvIndex = 0, normalIndex = 0, type;
 	//Push back a whole triangle/primitive to verts
 	for (int i = 0; i < 3; i++) {
-		type = 0;
 		//push vertex
-		vertIndex = getIntegerValue(vertex_data[i], type) - 1;
+		vertIndex = getIntegerValue(vertex_data[i].at(VERTEX)) - 1;
 		verts.push_back(vertices.at(vertIndex).x);
 		verts.push_back(vertices.at(vertIndex).y);
 		verts.push_back(vertices.at(vertIndex).z);
 
 		//push Uvs
 		if (usingUvs) {
-			type++;
-			uvIndex = getIntegerValue(vertex_data[i], type) - 1;
+			uvIndex = getIntegerValue(vertex_data[i].at(UV)) - 1;
 			verts.push_back(uvs.at(uvIndex).x);
 			verts.push_back(uvs.at(uvIndex).y);
 		}
 
 		//Push normals
 		if (usingNormals) {
-			type++;
-			normalIndex = getIntegerValue(vertex_data[i], type) - 1;
+			normalIndex = getIntegerValue(vertex_data[i].at(NORMAL)) - 1;
 			verts.push_back(normals.at(normalIndex).x);
 			verts.push_back(normals.at(normalIndex).y);
 			verts.push_back(normals.at(normalIndex).z);

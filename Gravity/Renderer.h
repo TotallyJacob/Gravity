@@ -1,6 +1,9 @@
 #define GLEW_STATIC
 #include"GL/glew.h"
 #include"GLFW/glfw3.h"
+#include"GLM/glm.hpp"
+#include "GLM/gtc/matrix_transform.hpp"
+#include "GLM/gtx/transform.hpp"
 
 #include<iostream>
 
@@ -40,6 +43,9 @@ protected:
 	virtual void cleanUp() = 0;
 
 public:
+
+	glm::mat4 viewMatrix;
+	glm::mat4 perspectiveMatrix;
 
 	explicit Renderer(const char* windowName, unsigned int width, unsigned int heights);
 

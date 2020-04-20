@@ -1,6 +1,7 @@
 #include "Renderer.h"
 
-Renderer::Renderer(const char*windowName, unsigned int width, unsigned int height) {
+Renderer::Renderer(const char*windowName, unsigned int width, unsigned int height) 
+	: viewMatrix(1.0f), perspectiveMatrix(1.0f) {
 	if (initGLFW({ windowName, width, height }) != 0 || initGLEW() != 0) {
 		setup = -1;
 		return;

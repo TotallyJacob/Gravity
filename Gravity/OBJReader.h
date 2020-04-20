@@ -10,6 +10,11 @@
 #include "GLM/gtc/matrix_transform.hpp"
 #include "GLM/gtx/transform.hpp"
 
+//Defines
+#define VERTEX 0
+#define UV 1
+#define NORMAL 2
+
 #pragma once
 
 class OBJReader
@@ -45,9 +50,6 @@ protected:
 		}
 	inline static int getIntegerValue(std::string string) {
 		return strtoul(string.c_str(), 0, 10);
-	}
-	inline static int getIntegerValue(split_string split_string, unsigned int index) {
-		return getIntegerValue(split_string.at(index));
 	}
 
 	//Main methods

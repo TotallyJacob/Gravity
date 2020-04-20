@@ -51,29 +51,35 @@ public:
 	}
 
 	//Normal
-	struct BufferBuffers {
-		unsigned int& vao;
-		unsigned int& vbo;
-	};
 	struct Buffer {
-		BufferBuffers buffers;
+		unsigned int *vao;
+		unsigned int *vbo;
 		std::vector<float> vertices;
 	};
 
 	inline static void createBuffers(Buffer buffer, bool leaveBinded = false, unsigned int drawType = GL_STATIC_DRAW) {
-		glGenVertexArrays(1, &buffer.buffers.vao);
-		glGenBuffers(1, &buffer.buffers.vbo);
+		glGenVertexArrays(1, buffer.vao);
+		glGenBuffers(1, buffer.vbo);
 
 		//bindings
-		glBindVertexArray(buffer.buffers.vao);
-		glBindBuffer(GL_ARRAY_BUFFER, buffer.buffers.vbo);
+		glBindVertexArray(*buffer.vao);
+		glBindBuffer(GL_ARRAY_BUFFER, *buffer.vbo);
 
 		//Attaching data
 		glBufferData(GL_ARRAY_BUFFER, buffer.vertices.size() * sizeof(float), &buffer.vertices.front(), drawType);
+
+		if (!leaveBinded)
+			unbindBuffer();
+		
 	}
 
 	inline static void bufferData(std::vector<float> data, unsigned int drawType = GL_STATIC_DRAW) {
 		glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), &data.front(), drawType);
+	}
+
+	inline static void unbindBuffer() {
+		glBindVertexArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 };
 
