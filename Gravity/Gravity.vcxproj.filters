@@ -43,21 +43,24 @@
     <Filter Include="Source Files\game\system">
       <UniqueIdentifier>{c27f3650-9364-4692-b32b-835032f064df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\engine\util\data">
+      <UniqueIdentifier>{f2b16a22-146f-406c-a0dc-043bcf35f93c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\util\data">
+      <UniqueIdentifier>{3fd45f2c-0dae-49bb-a4ce-51699a81802c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine\util\image">
+      <UniqueIdentifier>{f46db5fb-50d5-43e7-8248-d06857eca659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine\util\image">
+      <UniqueIdentifier>{07dc19fe-aa91-4549-b43b-cedb461ad31f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files\engine\util</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files\engine\util</Filter>
-    </ClCompile>
-    <ClCompile Include="OBJReader.cpp">
-      <Filter>Source Files\engine\util</Filter>
-    </ClCompile>
     <ClCompile Include="ShaderProgram.cpp">
-      <Filter>Source Files\engine\util</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
       <Filter>Source Files\engine\util</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
@@ -87,6 +90,18 @@
     <ClCompile Include="PlanetSystem.cpp">
       <Filter>Source Files\game\system</Filter>
     </ClCompile>
+    <ClCompile Include="OBJReader.cpp">
+      <Filter>Source Files\engine\util\data</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\engine\util\data</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\engine\util\image</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBuffer.cpp">
+      <Filter>Source Files\engine\util\image</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffers.h">
@@ -95,19 +110,7 @@
     <ClInclude Include="Camera.h">
       <Filter>Header Files\engine\util</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
-      <Filter>Header Files\engine\util</Filter>
-    </ClInclude>
-    <ClInclude Include="OBJReader.h">
-      <Filter>Header Files\engine\util</Filter>
-    </ClInclude>
     <ClInclude Include="ShaderProgram.h">
-      <Filter>Header Files\engine\util</Filter>
-    </ClInclude>
-    <ClInclude Include="stb.h">
-      <Filter>Header Files\engine\util</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
       <Filter>Header Files\engine\util</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
@@ -133,6 +136,21 @@
     </ClInclude>
     <ClInclude Include="PlanetSystem.h">
       <Filter>Header Files\game\systems</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJReader.h">
+      <Filter>Header Files\engine\util\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\engine\util\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\engine\util\image</Filter>
+    </ClInclude>
+    <ClInclude Include="stb.h">
+      <Filter>Header Files\engine\util\image</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBuffer.h">
+      <Filter>Header Files\engine\util\image</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

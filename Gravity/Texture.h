@@ -11,6 +11,11 @@ class Texture
 {
 public:
 
+	struct Dimensions {
+		unsigned int width;
+		unsigned int height;
+	};
+
 	inline static void setParameters() {
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
@@ -26,6 +31,8 @@ public:
 	}
 
 	static void create(const char *path, unsigned int &textureId);
+
+	static void create(unsigned int &textureID, Dimensions dim, unsigned int type = GL_DEPTH_COMPONENT);
 
 };
 
