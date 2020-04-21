@@ -1,25 +1,23 @@
-#include<iostream>
-#include<vector>
-
 //External APIs
+#include"GL/glew.h"
 #include"GLFW/glfw3.h"
 #include"GLM/glm.hpp"
 #include "GLM/gtc/matrix_transform.hpp"
 #include "GLM/gtx/transform.hpp"
 
+#include<iostream>
+#include<vector>
+
 //My imports
+#include"DataReader.h"
 #include"Model.h"
 #include"Buffers.h"
 #include"ShaderProgram.h"
 
 #pragma once
 
-class Body
+class Body : public DataReader
 {
-public:
-	struct BodyData {
-	};
-
 protected:
 	//Rendering
 	unsigned int vao = 0, vbo = 0;
@@ -28,11 +26,9 @@ protected:
 	glm::vec3 position;
 	glm::mat4 modelMatrix;
 
-	BodyData data;
-
 public:
 
-	Body(BodyData data);
+	Body(const char *dataFilePath);
 	~Body() = default;
 	
 	//Setters
@@ -51,9 +47,6 @@ public:
 	}
 
 	//Getters
-	const BodyData& getData() const {
-		return data;
-	}
 	const glm::mat4 getModelMatrix() const {
 		return modelMatrix;
 	}
@@ -61,14 +54,10 @@ public:
 		return position;
 	}
 
-	//Main draw
-	virtual void draw() = 0;
 
 	//Different drawing passes
+	virtual void draw() = 0;
 	virtual void shadowMapPass() = 0;
-
-protected:
-	virtual void drawPass() = 0;
 	virtual void alphaPass() = 0;
 };
 

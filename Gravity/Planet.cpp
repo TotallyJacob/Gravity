@@ -1,9 +1,10 @@
 #include "Planet.h"
-Planet::Planet(BodyData data, const char *modelName) : Body(data) {
+Planet::Planet(const char* filePath) : Body(filePath) {
+	readData();
 
 	//Set dat
-	Model m(modelName, vertices, true, false);
-	num_vertices = m.getNumberOfVertices();
+	//Model m(modelName, vertices, true, false);
+	//num_vertices = m.getNumberOfVertices();
 
 	//Create vao, vbo etc
 	Buffers::Buffer buffer = {
@@ -20,13 +21,8 @@ Planet::Planet(BodyData data, const char *modelName) : Body(data) {
 	Buffers::unbindBuffer();
 }
 
-void Planet::draw() {
-	drawPass();
-	alphaPass();
-}
-
 //Render passes
-void Planet::drawPass() {
+void Planet::draw() {
 	glBindVertexArray(vao);
 
 	ShaderProgram::sendModelMatrix(0, &modelMatrix[0][0]);
@@ -41,5 +37,10 @@ void Planet::alphaPass() {
 }
 
 void Planet::shadowMapPass() {
+
+}
+
+//Data
+void Planet::readParsedData(rapidjson::Document& doc) {
 
 }

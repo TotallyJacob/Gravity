@@ -12,6 +12,9 @@
 #include"ShaderProgram.h"
 #include"Camera.h"
 
+//test
+#include"DataWriter.h"
+
 #pragma once
 
 class Gravity : public Renderer

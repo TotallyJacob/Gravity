@@ -19,12 +19,6 @@
     <Filter Include="Source Files\game">
       <UniqueIdentifier>{14483b95-81b6-4d3a-bab6-07c5605b6ab5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\game\bodies">
-      <UniqueIdentifier>{a61bc7e8-a116-4e73-b2db-b71614b00485}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\game\bodies">
-      <UniqueIdentifier>{3e1f0a12-0693-4325-baac-5565de41b2de}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\engine">
       <UniqueIdentifier>{8c406ba6-bdb7-4da3-981f-2c9cabd1ddb2}</UniqueIdentifier>
     </Filter>
@@ -55,6 +49,18 @@
     <Filter Include="Header Files\engine\util\image">
       <UniqueIdentifier>{07dc19fe-aa91-4549-b43b-cedb461ad31f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\game\system\bodies">
+      <UniqueIdentifier>{a61bc7e8-a116-4e73-b2db-b71614b00485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game\systems\bodies">
+      <UniqueIdentifier>{3e1f0a12-0693-4325-baac-5565de41b2de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game\systems\data">
+      <UniqueIdentifier>{1de06f87-0ce6-4d83-b6fa-38b2505c8276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game\system\data">
+      <UniqueIdentifier>{42723a7a-a496-4caa-ac80-a206803f6862}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp">
@@ -73,16 +79,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Body.cpp">
-      <Filter>Source Files\game\bodies</Filter>
+      <Filter>Source Files\game\system\bodies</Filter>
     </ClCompile>
     <ClCompile Include="Star.cpp">
-      <Filter>Source Files\game\bodies</Filter>
+      <Filter>Source Files\game\system\bodies</Filter>
     </ClCompile>
     <ClCompile Include="Planet.cpp">
-      <Filter>Source Files\game\bodies</Filter>
+      <Filter>Source Files\game\system\bodies</Filter>
     </ClCompile>
     <ClCompile Include="Moon.cpp">
-      <Filter>Source Files\game\bodies</Filter>
+      <Filter>Source Files\game\system\bodies</Filter>
     </ClCompile>
     <ClCompile Include="SolarSystem.cpp">
       <Filter>Source Files\game\system</Filter>
@@ -102,6 +108,12 @@
     <ClCompile Include="FrameBuffer.cpp">
       <Filter>Source Files\engine\util\image</Filter>
     </ClCompile>
+    <ClCompile Include="DataReader.cpp">
+      <Filter>Source Files\game\system\data</Filter>
+    </ClCompile>
+    <ClCompile Include="DataWriter.cpp">
+      <Filter>Source Files\game\system\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffers.h">
@@ -120,16 +132,16 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Body.h">
-      <Filter>Header Files\game\bodies</Filter>
+      <Filter>Header Files\game\systems\bodies</Filter>
     </ClInclude>
     <ClInclude Include="Star.h">
-      <Filter>Header Files\game\bodies</Filter>
+      <Filter>Header Files\game\systems\bodies</Filter>
     </ClInclude>
     <ClInclude Include="Planet.h">
-      <Filter>Header Files\game\bodies</Filter>
+      <Filter>Header Files\game\systems\bodies</Filter>
     </ClInclude>
     <ClInclude Include="Moon.h">
-      <Filter>Header Files\game\bodies</Filter>
+      <Filter>Header Files\game\systems\bodies</Filter>
     </ClInclude>
     <ClInclude Include="SolarSystem.h">
       <Filter>Header Files\game\systems</Filter>
@@ -151,6 +163,12 @@
     </ClInclude>
     <ClInclude Include="FrameBuffer.h">
       <Filter>Header Files\engine\util\image</Filter>
+    </ClInclude>
+    <ClInclude Include="DataReader.h">
+      <Filter>Header Files\game\systems\data</Filter>
+    </ClInclude>
+    <ClInclude Include="DataWriter.h">
+      <Filter>Header Files\game\systems\data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

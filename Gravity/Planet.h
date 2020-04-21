@@ -4,18 +4,18 @@
 
 class Planet : public Body
 {
+private:
+	unsigned int num_vertices = 0;
+
+	void readParsedData(rapidjson::Document& doc) override;
+	
 public:
 
-	Planet(BodyData data, const char *modelName);
+	Planet(const char *filePath);
 	~Planet() = default;
 
 	void draw() override;
 	void shadowMapPass() override;
-
-private:
-	unsigned int num_vertices = 0;
-
-	void drawPass() override;
 	void alphaPass() override;
 
 };
