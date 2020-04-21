@@ -41,6 +41,10 @@ void Planet::shadowMapPass() {
 }
 
 //Data
-void Planet::readParsedData(rapidjson::Document& doc) {
+void Planet::readParsedData(rapidjson::Document &doc) {
+
+}
+
+void Planet::writeJsonData(StringBufferWriter &writer) {
 
 }

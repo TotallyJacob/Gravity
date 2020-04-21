@@ -16,23 +16,16 @@ protected:
 	using StringBufferWriter = rapidjson::PrettyWriter <rapidjson::StringBuffer>;
 	using DefaultStringBufferWriter = rapidjson::Writer <rapidjson::StringBuffer>;
 
-private:
+	std::string filePath;
 
-	static void addNestedJson(StringBufferWriter &currentWriter, void(*func)(DefaultStringBufferWriter& newWriter)) {
-		rapidjson::StringBuffer stringBuffer;
-		DefaultStringBufferWriter writer(stringBuffer);
-		writer.StartObject();
-		func(writer);
-		writer.EndObject();
-
-		currentWriter.String(stringBuffer.GetString());
-	}
+	virtual void writeJsonData(StringBufferWriter& writer);
+	const void writeNestedJson(StringBufferWriter& currentWriter, void(*func)(DefaultStringBufferWriter& newWriter));
 
 public:
 
-	static void writeData(const char* filePath);
+	DataWriter(const char *filePath);
+	~DataWriter() = default;
 
-	static void writeData(StringBufferWriter& writer);
-
+	void writeData();
 };
 

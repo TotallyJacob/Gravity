@@ -9,14 +9,14 @@
 #include<vector>
 
 //My imports
-#include"DataReader.h"
+#include"BodyData.h"
 #include"Model.h"
 #include"Buffers.h"
 #include"ShaderProgram.h"
 
 #pragma once
 
-class Body : public DataReader
+class Body : public BodyData
 {
 protected:
 	//Rendering

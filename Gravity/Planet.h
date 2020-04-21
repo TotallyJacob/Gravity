@@ -8,6 +8,7 @@ private:
 	unsigned int num_vertices = 0;
 
 	void readParsedData(rapidjson::Document& doc) override;
+	void writeJsonData(StringBufferWriter &writer) override;
 	
 public:
 

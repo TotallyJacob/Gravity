@@ -7,7 +7,7 @@ Gravity::Gravity() : Renderer("Gravity", 1280, 720){
 //Main
 void Gravity::init() {
 
-	DataWriter::writeData("test.json");
+	//DataWriter::writeData("test.json");
 
 }
 

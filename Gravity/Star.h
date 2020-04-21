@@ -12,6 +12,7 @@ private:
 
 	void shadowMapPass() override;
 	void readParsedData(rapidjson::Document& doc) override;
+	void writeJsonData(StringBufferWriter &writer) override;
 
 public:
 

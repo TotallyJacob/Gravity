@@ -1,6 +1,10 @@
 #include "DataWriter.h"
 
-void DataWriter::writeData(const char* filePath) {
+DataWriter::DataWriter(const char *filePath) : filePath(filePath) {
+
+}
+
+void DataWriter::writeData() {
 
 	std::ofstream fileCreate(filePath);
 	fileCreate.close();
@@ -25,7 +29,7 @@ void DataWriter::writeData(const char* filePath) {
 	file.close();
 }
 
-void DataWriter::writeData(rapidjson::PrettyWriter<rapidjson::StringBuffer>& writer) {
+void DataWriter::writeJsonData(StringBufferWriter& writer) {
 
 	writer.Key("RenderingInfo");
 	addNestedJson(writer,
@@ -45,4 +49,15 @@ void DataWriter::writeData(rapidjson::PrettyWriter<rapidjson::StringBuffer>& wri
 
 		});
 
+}
+
+//Protected
+const void DataWriter::writeNestedJson(StringBufferWriter& currentWriter, void(*func)(DefaultStringBufferWriter& newWriter)) {
+	rapidjson::StringBuffer stringBuffer;
+	DefaultStringBufferWriter writer(stringBuffer);
+	writer.StartObject();
+	func(writer);
+	writer.EndObject();
+
+	currentWriter.String(stringBuffer.GetString());
 }

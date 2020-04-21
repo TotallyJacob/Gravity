@@ -55,12 +55,6 @@
     <Filter Include="Header Files\game\systems\bodies">
       <UniqueIdentifier>{3e1f0a12-0693-4325-baac-5565de41b2de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\game\systems\data">
-      <UniqueIdentifier>{1de06f87-0ce6-4d83-b6fa-38b2505c8276}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\game\system\data">
-      <UniqueIdentifier>{42723a7a-a496-4caa-ac80-a206803f6862}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp">
@@ -108,11 +102,14 @@
     <ClCompile Include="FrameBuffer.cpp">
       <Filter>Source Files\engine\util\image</Filter>
     </ClCompile>
-    <ClCompile Include="DataReader.cpp">
-      <Filter>Source Files\game\system\data</Filter>
-    </ClCompile>
     <ClCompile Include="DataWriter.cpp">
-      <Filter>Source Files\game\system\data</Filter>
+      <Filter>Source Files\engine\util\data</Filter>
+    </ClCompile>
+    <ClCompile Include="DataReader.cpp">
+      <Filter>Source Files\engine\util\data</Filter>
+    </ClCompile>
+    <ClCompile Include="BodyData.cpp">
+      <Filter>Source Files\game\system\bodies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -164,11 +161,14 @@
     <ClInclude Include="FrameBuffer.h">
       <Filter>Header Files\engine\util\image</Filter>
     </ClInclude>
-    <ClInclude Include="DataReader.h">
-      <Filter>Header Files\game\systems\data</Filter>
-    </ClInclude>
     <ClInclude Include="DataWriter.h">
-      <Filter>Header Files\game\systems\data</Filter>
+      <Filter>Header Files\engine\util\data</Filter>
+    </ClInclude>
+    <ClInclude Include="DataReader.h">
+      <Filter>Header Files\engine\util\data</Filter>
+    </ClInclude>
+    <ClInclude Include="BodyData.h">
+      <Filter>Header Files\game\systems\bodies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
