@@ -1,8 +1,5 @@
 #include "Camera.h"
 
-Camera::Camera() {
-}
-
 void Camera::setMovementVector(glm::vec3 vector) {
 	//forward / back
 	position += vector.x * viewDirection;
@@ -21,4 +18,7 @@ void Camera::setLocation(glm::vec3 location) {
 	position.x = location.x;
 	position.y = location.y;
 	position.z = location.z;
+}
+void Camera::updateViewMatrix() {
+	viewMatrix = glm::lookAt(position, position + viewDirection, upVector);
 }

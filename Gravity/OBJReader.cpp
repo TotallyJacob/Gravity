@@ -1,27 +1,26 @@
 #include "OBJReader.h"
 
 OBJReader::OBJReader(const char* path, bool normals, bool uvs) {
-
 	//Setting boolean values
 	setModelData(normals, uvs);
 }
 
 void OBJReader::setData(const char* path) {
 
+	double start = glfwGetTime();
+
 	vertices = std::vector<glm::vec3>(0);
 	normals = std::vector<glm::vec3>(0);
 	uvs = std::vector <glm::vec2>(0);
 
 	std::fstream stream(path);
-	std::stringstream stringStream[1];
 
 	std::string line;
 
 	while (getline(stream, line))
 		readModel(line);
 
-	uvs.clear();
-	normals.clear();
+	std::cout << "Time: " << (glfwGetTime() - start) << std::endl;
 }
 
 /*

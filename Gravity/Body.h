@@ -9,18 +9,17 @@
 #include<vector>
 
 //My imports
-#include"BodyData.h"
 #include"Model.h"
 #include"Buffers.h"
 #include"ShaderProgram.h"
 
 #pragma once
 
-class Body : public BodyData
+class Body
 {
 protected:
 	//Rendering
-	unsigned int vao = 0, vbo = 0;
+	unsigned int vao = 0, vbo = 0, num_vertices = 0;
 	std::vector<float> vertices;
 	//Matrix
 	glm::vec3 position;
@@ -56,7 +55,7 @@ public:
 
 
 	//Different drawing passes
-	virtual void draw() = 0;
+	virtual void draw(unsigned int program) = 0; //program for now
 	virtual void shadowMapPass() = 0;
 	virtual void alphaPass() = 0;
 };

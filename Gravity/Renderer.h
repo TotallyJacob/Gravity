@@ -29,6 +29,9 @@ private:
 
 protected:
 
+	glm::mat4 perspectiveMatrix;
+	glm::mat4 viewMatrix;
+
 	struct WindowData {
 		const char* windowName;
 		unsigned int width, height;
@@ -44,12 +47,9 @@ protected:
 
 public:
 
-	glm::mat4 viewMatrix;
-	glm::mat4 perspectiveMatrix;
-
 	explicit Renderer(const char* windowName, unsigned int width, unsigned int heights);
 
-	virtual void start();
-	virtual int end();
+	void start();
+	int end();
 };
 

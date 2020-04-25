@@ -11,9 +11,15 @@
 #include"Buffers.h"
 #include"ShaderProgram.h"
 #include"Camera.h"
+#include"SolarSystem.h"
 
 //test
-#include"DataWriter.h"
+#include"PlanetManager.h"
+
+#include"JsonData.h"
+
+#define TICK_RATE 0.02
+#define TICK_RATE_SLOW 1
 
 #pragma once
 
@@ -24,6 +30,12 @@ private:
 	void init() override;
 	void loop() override;
 	void cleanUp() override;
+
+	void resize(glm::mat4 &perspective);
+
+	//Updates
+	void tick();
+	void tick_slow();
 
 public:
 

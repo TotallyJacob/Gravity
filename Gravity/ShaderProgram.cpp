@@ -3,8 +3,7 @@
 ShaderProgram::ShaderProgram(std::vector<const char*> shaders) {
 
 	std::vector<int> shaders_compiled;
-	int success = 0;
-	char infoLog[512];
+	shaders_compiled.reserve(shaders.size());
 
 	program = glCreateProgram();
 
@@ -22,10 +21,16 @@ ShaderProgram::ShaderProgram(std::vector<const char*> shaders) {
 	glLinkProgram(program);
 
 	//Check for errors
+	int success = 0;
 	glGetProgramiv(program, GL_LINK_STATUS, &success);
+
+	//Print errors
 	if(!success){
+		char infoLog[512];
 		glGetProgramInfoLog(program, GL_LINK_STATUS, NULL, infoLog);
 		std::cout << infoLog << std::endl;
+
+		glDeleteProgram(program);
 	}
 
 	//Delete unwanted shaders

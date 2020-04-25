@@ -5,17 +5,16 @@
 class Planet : public Body
 {
 private:
-	unsigned int num_vertices = 0;
 
-	void readParsedData(rapidjson::Document& doc) override;
-	void writeJsonData(StringBufferWriter &writer) override;
+	std::string modelName;
+	unsigned int program = 0;
 	
 public:
 
 	Planet(const char *filePath);
 	~Planet() = default;
 
-	void draw() override;
+	void draw(unsigned int program) override;
 	void shadowMapPass() override;
 	void alphaPass() override;
 

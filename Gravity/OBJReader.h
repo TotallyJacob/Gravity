@@ -1,3 +1,6 @@
+#include"GL/glew.h"
+#include"GLFW/glfw3.h"
+
 //Standard Imports
 #include<iostream>
 #include<vector>
@@ -33,6 +36,7 @@ protected:
 
 	//Data
 	bool usingNormals = false, usingUvs = false;
+	unsigned int f = 0;
 	/*
 	Scoped inside the constructor
 	*/
@@ -47,7 +51,7 @@ protected:
 
 			while (getline(ss, split, *splitBy))
 				splited.push_back(split);
-		}
+	}
 	inline static int getIntegerValue(std::string string) {
 		return strtoul(string.c_str(), 0, 10);
 	}

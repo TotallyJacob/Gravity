@@ -42,9 +42,16 @@ private:
 
 		if (type == "geo")
 			return GL_GEOMETRY_SHADER;
+
+		if (type == "tess_control")
+			return GL_TESS_CONTROL_SHADER;
+
+		if (type == "tess_evaluation")
+			return GL_TESS_EVALUATION_SHADER;
 	}
 
 	int getShader(const char* fileName);
+
 public:
 
 	ShaderProgram(std::vector<const char*> shaders);

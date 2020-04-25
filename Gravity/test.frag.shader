@@ -1,9 +1,11 @@
-#version 330 core
+#version 410 core
 
 out vec4 Frag;
 
+uniform vec4 color;
+
 void main() {
 
-	Frag = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+	Frag = color;
 
 }

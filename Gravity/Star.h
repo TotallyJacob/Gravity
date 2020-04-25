@@ -11,8 +11,6 @@ private:
 	glm::mat4 lightProjectionMatrix;
 
 	void shadowMapPass() override;
-	void readParsedData(rapidjson::Document& doc) override;
-	void writeJsonData(StringBufferWriter &writer) override;
 
 public:
 
@@ -23,7 +21,7 @@ public:
 		return glm::lookAt(position, position, UPVECTOR);
 	}
 
-	void draw() override;
+	void draw(unsigned int program) override;
 	void alphaPass() override;
 };
 
